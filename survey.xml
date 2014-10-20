@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- This file is part survey_step module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- Survey Step -->
+        <record model="ir.ui.view" id="survey_step_view_form">
+            <field name="model">survey.step</field>
+            <field name="type">form</field>
+            <field name="name">survey_step_form</field>
+        </record>
+        <record model="ir.ui.view" id="survey_step_view_list">
+            <field name="model">survey.step</field>
+            <field name="type">tree</field>
+            <field name="name">survey_step_list</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_survey_step">
+            <field name="name">Step Configuration</field>
+            <field name="res_model">survey.step</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_survey_step_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="survey_step_view_list"/>
+            <field name="act_window" ref="act_survey_step"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_survey_step_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="survey_step_view_form"/>
+            <field name="act_window" ref="act_survey_step"/>
+        </record>
+
+        <record model="ir.model.access" id="access_survey_step">
+            <field name="model" search="[('model', '=', 'survey.step')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_survey_step_group_survey_admin">
+            <field name="model" search="[('model', '=', 'survey.step')]"/>
+            <field name="group" ref="survey.group_survey_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <menuitem action="act_survey_step" id="menu_survey_step_form" name="Step"
+            parent="survey.menu_configuration" sequence="5"/>
+
+        <!-- Survey Field -->
+        <record model="ir.ui.view" id="survey_field_view_list">
+            <field name="model">survey.field</field>
+            <field name="inherit" ref="survey.survey_field_view_list"/>
+            <field name="name">survey_field_list</field>
+        </record>
+        <record model="ir.ui.view" id="survey_field_view_form">
+            <field name="model">survey.field</field>
+            <field name="inherit" ref="survey.survey_field_view_form"/>
+            <field name="name">survey_field_form</field>
+        </record>
+
+        <!-- Survey Configuration -->
+        <record model="ir.ui.view" id="survey_configuration_view_form">
+            <field name="model">survey.configuration</field>
+            <field name="inherit" ref="survey.survey_configuration_view_form"/>
+            <field name="name">configuration_form</field>
+        </record>
+
+        <!-- Default Data -->
+        <record model="survey.step" id="survey_step_default">
+            <field name="name">Default</field>
+            <field name="code">default</field>
+        </record>
+    </data>
+</tryton>
