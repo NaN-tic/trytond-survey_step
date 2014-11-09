@@ -46,4 +46,5 @@ class SurveyField:
 
 class Configuration:
     __name__ = 'survey.configuration'
-    step = fields.Property(fields.Many2One('survey.step', 'Step', required=True))
+    step = fields.Property(fields.Many2One('survey.step', 'Step',
+        required=True))
