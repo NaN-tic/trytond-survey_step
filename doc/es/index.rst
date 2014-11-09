@@ -2,4 +2,4 @@
 Encuestas o formularios. Pasos
 ==============================
 
-Agrupación de campos de las encuestas o formularios en diferentes pasos.
+Permite definir pasos en una encuesta para agrupar varios campos.
