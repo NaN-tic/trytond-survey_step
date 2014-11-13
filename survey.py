@@ -37,12 +37,6 @@ class SurveyField:
         config = Config(1)
         return config.step.id if config.step else None
 
-    @classmethod
-    def __setup__(cls):
-        super(SurveyField, cls).__setup__()
-        cls._order.insert(0, ('step', 'ASC'))
-        cls._order.insert(1, ('sequence', 'ASC'))
-
 
 class Configuration:
     __name__ = 'survey.configuration'
