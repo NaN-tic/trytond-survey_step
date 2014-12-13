@@ -16,7 +16,7 @@ msgstr "Codi"
 
 msgctxt "field:survey.step,create_date:"
 msgid "Create Date"
-msgstr "Data dcreació"
+msgstr "Data creació"
 
 msgctxt "field:survey.step,create_uid:"
 msgid "Create User"
