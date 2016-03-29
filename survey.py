@@ -6,7 +6,6 @@ from trytond.model import ModelSQL, ModelView, fields
 from trytond.pool import Pool, PoolMeta
 
 __all__ = ['SurveyStep', 'SurveyField', 'Configuration']
-__metaclass__ = PoolMeta
 
 
 class SurveyStep(ModelSQL, ModelView):
@@ -27,6 +26,7 @@ class SurveyStep(ModelSQL, ModelView):
 
 
 class SurveyField:
+    __metaclass__ = PoolMeta
     __name__ = 'survey.field'
     step = fields.Many2One('survey.step', 'Step', ondelete='CASCADE',
         select=True)
@@ -39,6 +39,7 @@ class SurveyField:
 
 
 class Configuration:
+    __metaclass__ = PoolMeta
     __name__ = 'survey.configuration'
     step = fields.Property(fields.Many2One('survey.step', 'Step',
         required=True))
