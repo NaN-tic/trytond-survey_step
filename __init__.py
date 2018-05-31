@@ -9,6 +9,7 @@ from .survey import *
 def register():
     Pool.register(
         Configuration,
+        ConfigurationStep,
         SurveyStep,
         SurveyField,
         module='survey_step', type_='model')
